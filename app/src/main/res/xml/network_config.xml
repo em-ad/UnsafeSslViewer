@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">213.233.179.189</domain>
+        <domain includeSubdomains="true">213.233.179.189:3000</domain>
+        <domain includeSubdomains="true">213.233.179.189:9000</domain>
+        <domain includeSubdomains="true">213.233.179.189:8080</domain>
+    </domain-config>
+</network-security-config>
