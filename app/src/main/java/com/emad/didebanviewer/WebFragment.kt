@@ -52,7 +52,6 @@ class WebFragment : Fragment() {
                 loadPage2()
             }
         })
-        binding.ww2.webViewClient = SSLTolerentWebViewClient(object: PageLoadCallback{ override fun pageLoaded() {} })
         binding.ww3.webViewClient = SSLTolerentWebViewClient(object: PageLoadCallback{
             override fun pageLoaded() {
                 loadingDialogFragment.hideLoading()
@@ -67,14 +66,6 @@ class WebFragment : Fragment() {
         binding.ww.settings.loadWithOverviewMode = true
         binding.ww.settings.pluginState = WebSettings.PluginState.ON_DEMAND
 
-        binding.ww2.settings.javaScriptEnabled = true
-        binding.ww2.settings.domStorageEnabled = true
-        binding.ww2.settings.setSupportZoom(true)
-        binding.ww2.settings.javaScriptCanOpenWindowsAutomatically = true
-        binding.ww2.settings.useWideViewPort = true
-        binding.ww2.settings.loadWithOverviewMode = true
-        binding.ww2.settings.pluginState = WebSettings.PluginState.ON_DEMAND
-
         binding.ww3.settings.javaScriptEnabled = true
         binding.ww3.settings.domStorageEnabled = true
         binding.ww3.settings.setSupportZoom(true)
@@ -83,21 +74,15 @@ class WebFragment : Fragment() {
         binding.ww3.settings.loadWithOverviewMode = true
         binding.ww3.settings.pluginState = WebSettings.PluginState.ON_DEMAND
 
-        binding.ww.loadUrl("https://213.233.179.189:3000")
+        binding.ww.loadUrl("https://back.didban.simorgh.space")
         loadingDialogFragment.showLoading("در حال آماده سازی سیستم", childFragmentManager)
 
     }
 
     private fun loadPage2() {
-        binding.ww2.loadUrl("https://213.233.179.189:9000")
-        loadingDialogFragment.showLoading("در حال بارگذاری اطلاعات", childFragmentManager)
-        binding.ww2.visibility = View.VISIBLE
-
-        Handler(Looper.getMainLooper()).postDelayed({
-            loadingDialogFragment.showLoading("در حال بارگذاری پنل دوربین ها", childFragmentManager)
-            binding.ww3.loadUrl("https://213.233.179.189:8080")
-            binding.ww3.visibility = View.VISIBLE
-        }, 3000)
+        loadingDialogFragment.showLoading("در حال بارگذاری پنل دوربین ها", childFragmentManager)
+        binding.ww3.loadUrl("https://didban.simorgh.space")
+        binding.ww3.visibility = View.VISIBLE
     }
 
     private class SSLTolerentWebViewClient(val callback: PageLoadCallback) : WebViewClient() {

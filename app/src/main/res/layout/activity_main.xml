@@ -7,12 +7,12 @@
         android:id="@+id/root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#072039"
+        android:background="@color/blue_dark"
         tools:context=".MainActivity">
 
         <TextView
             android:id="@+id/tv_prepare"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="44dp"
             android:layout_marginRight="44dp"
@@ -20,6 +20,8 @@
             android:fontFamily="@font/app_font"
             android:gravity="center"
             android:padding="12dp"
+            android:drawableRight="@drawable/ic_table"
+            android:drawablePadding="6dp"
             android:text="آماده سازی و اجرای سیستم"
             android:textColor="@color/black"
             android:textSize="16sp"
@@ -30,7 +32,7 @@
 
         <TextView
             android:id="@+id/tv_bye"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="44dp"
             android:layout_marginRight="44dp"
@@ -38,6 +40,8 @@
             android:fontFamily="@font/app_font"
             android:gravity="center"
             android:padding="12dp"
+            android:drawableRight="@drawable/ic_door_open"
+            android:drawablePadding="6dp"
             android:text="خروج"
             android:textColor="@color/black"
             android:textSize="16sp"
